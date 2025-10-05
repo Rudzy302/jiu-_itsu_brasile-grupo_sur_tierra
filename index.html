@@ -3,88 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BJJ TRIBU SUR TIERRA - Inicio</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <title>BJJ TRIBÚ SUR TIERRA - Mocoa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="navbar">
-        
-        <div class="logo-container">
-            <a href="#hero" class="logo-text">
-                <span class="logo-highlight">BJJ</span> TRIBU SUR TIERRA
-            </a>
-        </div>
-        
+        <a href="#hero" class="logo-text">
+            BJJ TRIBÚ SUR <span class="logo-highlight">TIERRA</span>
+        </a>
+
         <nav class="nav-links">
             <a href="#hero">Inicio</a>
-            <a href="#filosofia">Presentación</a>
-            <a href="#ubicacion">Ubicación</a>
-            <a href="#contacto">Contáctanos</a> 
+            <a href="#about">Presentación</a>
+            <a href="#location">Ubicación</a>
+            <a href="#contact">Contáctanos</a>
         </nav>
-        
+
         <div class="logo-social-group-right">
-            
             <div class="social-nav-icons">
-                <a href="https://www.facebook.com/profile.php?id=61577066638285" target="_blank" class="social-icon social-text">
-                    FACEBOOK
+                <a href="#" target="_blank" class="social-icon" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
                 </a>
-                <a href="https://www.instagram.com/tribusurtierrabjj/" target="_blank" class="social-icon social-text">
-                    INSTAGRAM 
-                </a>
-            </div>
-            
-            <div class="logo-especifico-container">
-                <a href="#hero">
-                    <img src="assets/logo.png" alt="Logo de Tribu Sur Tierra" class="logo-imagen">
+                <a href="#" target="_blank" class="social-icon" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
                 </a>
             </div>
+            <img src="assets/logo.png" alt="Logo Tribu Sur Tierra BJJ" class="logo-imagen">
         </div>
     </header>
 
-    <section class="hero-section animated-section" id="hero">
-        <div class="hero-content">
-            <h1>
-                Jiu Jitsu <br>
-                <span class="highlight">Brasileño</span>
-            </h1>
-            
-            <p class="subtitle">
-                Entrena con pasión, disciplina y técnica. Descubre el arte 
-                marcial que transforma tu cuerpo y mente.
-            </p>
 
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Jiu Jitsu Brasileño <span class="highlight">en Mocoa.</span></h1>
+            <p class="subtitle">
+                Entrena con disciplina, respeto y técnica. Somos la Tribu Sur Tierra, tu camino hacia la maestría en BJJ.
+            </p>
             <div class="cta-buttons">
-                <a href="#filosofia" class="btn primary">Conoce Nuestras Clases</a>
-                <a href="#contacto" class="btn secondary">Contáctanos</a> 
+                <a href="#contact" class="btn primary">Únete a la Tribu Hoy</a>
+                <a href="#about" class="btn secondary">Conoce Nuestra Filosofía</a>
             </div>
         </div>
-
         <div class="scroll-indicator">
-            <span class="dot"></span>
+            <div class="dot"></div>
         </div>
     </section>
 
-    <section class="about-section animated-section" id="filosofia">
-        <h2 class="section-title">
-            Nuestra <span class="highlight">Filosofía</span>
-        </h2>
+    <section id="about" class="about-section animated-section">
+        <h2 class="section-title">Nuestra <span class="highlight">Filosofía</span></h2>
         <p class="section-subtitle">
-            Enfocados exclusivamente en el Jiu Jitsu Brasileño, ofrecemos un entrenamiento integral 
-            que combina técnica tradicional con métodos modernos.
+            Enfocados exclusivamente en el Jiu Jitsu Brasileño, ofrecemos un entrenamiento integral que combina técnica tradicional con métodos modernos.
         </p>
 
         <div class="about-grid-container">
             <div class="video-container">
-                <div 
-                    id="promo-video-placeholder" 
-                    class="placeholder-video" 
-                    data-video-url="https://www.facebook.com/watch/?v=383021873752549" 
-                    style="background-image: url('assets/video-placeholder-image.jpg');"
-                >
-                    <span class="play-icon">▶</span>
+                <div id="placeholder-video" class="placeholder-video">
+                    <i class="fas fa-play play-icon"></i>
                 </div>
                 <p class="video-caption">Video Publicitario</p>
                 <p class="video-subcaption">Haz clic para reproducir</p>
@@ -93,26 +75,31 @@
             <div class="feature-list">
                 <h3>¿Por qué elegir nuestro gimnasio?</h3>
                 <div class="feature-item">
-                    <div class="feature-icon"></div> 
-                    <h4>Enfoque Especializado</h4>
-                    <p>Nos dedicamos exclusivamente al Jiu Jitsu Brasileño, garantizando la más alta calidad en la enseñanza.</p>
+                    <span class="feature-icon"></span>
+                    <div>
+                        <h4>Enfoque <span class="highlight">Especializado</span></h4>
+                        <p>Nos dedicamos exclusivamente al Jiu Jitsu Brasileño, garantizando la más alta calidad en la enseñanza.</p>
+                    </div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon"></div>
-                    <h4>Comunidad Unida</h4>
-                    <p>Formamos una familia de practicantes comprometidos con el crecimiento mutuo y el respeto.</p>
+                    <span class="feature-icon"></span>
+                    <div>
+                        <h4>Comunidad <span class="highlight">Unida</span></h4>
+                        <p>Formamos una familia de practicantes comprometidos con el crecimiento mutuo y el respeto.</p>
+                    </div>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon"></div>
-                    <h4>Instructores Certificados</h4>
-                    <p>Nuestros maestros poseen certificaciones internacionales y años de experiencia en competiciones.</p>
+                    <span class="feature-icon"></span>
+                    <div>
+                        <h4>Instructores <span class="highlight">Certificados</span></h4>
+                        <p>Nuestros maestros poseen certificaciones internacionales y años de experiencia en competiciones.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <h2 class="section-title gallery-title">
-            Galería de <span class="highlight">Entrenamientos</span>
-        </h2>
+        <h3 class="section-title gallery-title">Galería de <span class="highlight">Entrenamientos</span></h3>
+        
         <div class="gallery-grid">
             <div class="gallery-item"></div>
             <div class="gallery-item"></div>
@@ -120,190 +107,160 @@
         </div>
     </section>
 
-    <section class="location-section animated-section" id="ubicacion">
-        <h2 class="section-title">
-            Nuestra <span class="highlight">Ubicación</span>
-        </h2>
+    <section id="location" class="location-section animated-section">
+        <h2 class="section-title">Nuestra <span class="highlight">Ubicación</span></h2>
         <p class="section-subtitle">
-            Encuentra nuestro gimnasio fácilmente y únete a la mejor comunidad de Jiu Jitsu Brasileño de la ciudad.
+            Estamos ubicados en el corazón de Mocoa. Encuentra fácilmente nuestras instalaciones y horarios de entrenamiento.
         </p>
-        
+
         <div class="location-grid-container">
-            
-            <div class="location-box video-box">
+            <div class="location-box">
                 <div class="box-header">
-                    <h3>¿Cómo llegar?</h3>
+                    <h3>Contacto e Información</h3>
                 </div>
-                <div class="box-content video-content">
-                    <div class="video-placeholder-small">
-                        [ESPACIO PARA IFRAME DE VIDEO]
-                    </div>
-                    <p class="guide-text">Video de Ubicación</p>
-                    <p class="guide-subtext">Guía paso a paso</p>
-                </div>
-            </div>
-
-            <div class="location-box info-box">
-                <div class="box-header">
-                    <h3>Información de Ubicación</h3>
-                </div>
-                <div class="box-content info-content">
-                    <div class="info-item">
-                        <span class="info-icon">📍</span>
-                        <p><strong>Dirección</strong><br>Av. Principal #123<br>Colonia Centro<br>Ciudad, Estado 12345</p>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">⏱</span>
-                        <p><strong>Horarios de Clase</strong><br>Consulta la sección "Contáctanos" para horarios detallados de entrenamiento.</p>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">📞</span>
-                        <p><strong>Contacto Principal</strong><br>Teléfono: +57 313 369 1952<br>WhatsApp: +57 313 369 1952</p>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-icon">✉️</span>
-                        <p><strong>Email</strong><br><a href="mailto:tribusurtierrabjjgrapplingmma@gmail.com">tribusurtierrabjjgrapplingmma@gmail.com</a></p>
+                <div class="box-content">
+                    <div class="info-content">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt info-icon"></i>
+                            <p><strong>Dirección:</strong> Calle 10 # 5-20, Barrio Centro, Mocoa, Putumayo.</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt info-icon"></i>
+                            <p><strong>Teléfono/WhatsApp:</strong> +57 313 3691952</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope info-icon"></i>
+                            <p><strong>Email:</strong> contacto@tribusurtierra.com</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="location-box map-box">
+            <div class="location-box">
                 <div class="box-header">
                     <h3>Mapa Interactivo</h3>
                 </div>
                 <div class="box-content map-content">
-                    <div class="map-placeholder-small" id="map-container">
-                        [ESPACIO PARA IFRAME DE MAPA]
+                    <div class="map-placeholder-small">
+                        <i class="fas fa-map-marked-alt" style="font-size: 3em;"></i>
                     </div>
-                    <p class="guide-text">Mapa de Google Maps</p>
-                    <p class="guide-subtext">Ubicación exacta del gimnasio</p>
+                    <p class="guide-text">Encuéntranos en Google Maps</p>
+                    <p class="guide-subtext">Haz clic en la dirección para abrir la ubicación exacta.</p>
                 </div>
             </div>
 
-            <div class="location-box additional-info-box">
+            <div class="location-box" style="grid-column: 1 / 3;">
                 <div class="box-header">
-                    <h3>Información Adicional</h3>
+                    <h3>Horarios de Clases Regulares</h3>
                 </div>
                 <div class="box-content list-content">
                     <ul>
-                        <li>Estacionamiento gratuito disponible</li>
-                        <li>Vestuarios y duchas incluidos</li>
-                        <li>Área de descanso y hidratación</li>
-                        <li>Acceso para personas con discapacidad</li>
-                        <li>Cerca del transporte público</li>
+                        <li>**Lunes, Miércoles y Viernes:** 6:00 PM - 7:30 PM (Adultos BJJ)</li>
+                        <li>**Martes y Jueves:** 4:00 PM - 5:00 PM (Clase de Niños/Juveniles)</li>
+                        <li>**Sábados:** 9:00 AM - 10:30 AM (Open Mat - Entrenamiento Libre)</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-section animated-section" id="contacto">
-        <h2 class="section-title">
-            Conoce a tu <span class="highlight">Maestro</span>
-        </h2>
+    <section id="contact" class="contact-section animated-section">
+        <h2 class="section-title">Hablemos con el <span class="highlight">Maestro</span></h2>
         <p class="section-subtitle">
-            Entrena con un instructor certificado, cinturón negro en Jiu Jitsu Brasileño con años de
-            experiencia en competiciones internacionales.
+            Ponte en contacto directamente para resolver dudas sobre inscripciones, horarios o clases particulares.
         </p>
 
         <div class="master-grid-container">
-
             <div class="master-bio-column">
-                
                 <div class="bio-box master-info">
                     <div class="bio-header">
-                        <img src="URL_FOTO_MAESTRO.jpg" alt="Foto del Maestro Diego Andres Gonzales Fonsexa" class="master-photo">
+                        <img src="https://images.unsplash.com/photo-1520261623909-5c4d37532ac4?fm=jpg&w=100&h=100&fit=crop" alt="Foto del Maestro" class="master-photo">
                         <div class="bio-titles">
-                            <h3>Maestro Diego Andres Gonzales Fonsexa</h3>
-                            <p class="master-rank">Cinturón Negro • 6º Dan</p>
+                            <h3>Carlos "El León" García</h3>
+                            <p class="master-rank highlight">Cinta Púrpura BJJ | Instructor Certificado</p>
                         </div>
-                        <span class="rank-icon">🥋</span>
+                        <i class="fas fa-user-tie rank-icon"></i>
                     </div>
-                    
                     <div class="bio-content">
-                        <p>Con una trayectoria avanzada desde la infancia tiene **más de 10 años de experiencia** en formación de nuevos talentos por medio de una **metodología única y eficiente**.</p>
+                        <h4>Trayectoria y Filosofía</h4>
+                        <p style="color: var(--color-subtitle); margin-bottom: 20px;">
+                            El Profesor Carlos García tiene más de 10 años de experiencia en el Jiu Jitsu. Su enfoque se centra en la aplicación práctica de la técnica y la formación de atletas respetuosos y disciplinados. Ha competido exitosamente a nivel nacional e internacional.
+                        </p>
                         
                         <ul class="stats-list">
-                            <li><span class="stat-icon">🎓</span> +200 estudiantes entrenados</li>
-                            <li><span class="stat-icon">🏅</span> Certificado por la IBJJF</li>
-                            <li><span class="stat-icon">⏱</span> 10+ años de experiencia</li> 
+                            <li><i class="fas fa-calendar-alt stat-icon"></i> 10+ Años de Experiencia</li>
+                            <li><i class="fas fa-medal stat-icon"></i> Múltiples Campeonatos Ganados</li>
+                            <li><i class="fas fa-hands-helping stat-icon"></i> Formación en Primeros Auxilios</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="bio-box cert-info">
+                <div class="bio-box">
                     <div class="box-header">
-                        <h3>Certificaciones y Credenciales</h3>
+                        <h3>Certificaciones y Afiliaciones</h3>
                     </div>
-                    <div class="box-content cert-content">
+                    <div class="bio-content cert-content">
                         <div class="certificate-display">
-                            <img src="URL_IMAGEN_CERTIFICADO.jpg" alt="Certificado IBJJF" class="cert-image">
+                            <p style="color: var(--color-subtitle); font-size: 0.9em; margin-bottom: 10px;">
+                                La calidad de nuestra enseñanza está respaldada por entidades internacionales.
+                            </p>
+                            <img src="https://via.placeholder.com/300x200?text=Certificado+Ejemplo" alt="Certificado Internacional BJJ" class="cert-image">
                         </div>
                         <ul class="cert-list">
-                            <li>• Cinturón Negro 6º Dan - IBJJF</li>
-                            <li>• Instructor Certificado - Gracie Academy</li>
-                            <li>• Campeón Regional BJJ 2019-2021</li>
-                            <li>• Certificación en Primeros Auxilios</li>
+                            <li>- Federación Internacional de BJJ</li>
+                            <li>- Asociación de Artes Marciales de Putumayo</li>
+                            <li>- Certificado de Instructor Nivel II</li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+            
             <div class="contact-sidebar">
-                
                 <div class="contact-box">
                     <div class="box-header">
-                        <h3>Contáctanos Ahora</h3>
+                        <h3>Contacto Rápido</h3>
                     </div>
-                    <div class="box-content contact-items">
-                        <p class="contact-prompt">¿Listo para comenzar? Contacta directamente con el Maestro Carlos.</p>
-                        
-                        <a href="tel:+573133691952" class="contact-btn call-btn primary-bg">
-                            Llamar: +57 313 369 1952
+                    <div class="contact-items">
+                        <p class="contact-prompt">¡Envíanos un mensaje rápido o llámanos!</p>
+                        <a href="https://wa.me/573133691952" target="_blank" class="btn contact-btn primary-bg">
+                            <i class="fab fa-whatsapp"></i> Chat en WhatsApp
                         </a>
-                        
-                        <a 
-                            href="https://wa.me/573133691952?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20la%20clase%20de%20prueba%20de%20BJJ." 
-                            target="_blank" 
-                            class="contact-btn whatsapp-btn secondary-bg"
-                        >
-                            WhatsApp: +57 313 369 1952
+                        <a href="tel:+573133691952" class="btn contact-btn secondary-bg">
+                            <i class="fas fa-phone-alt"></i> Llamar Ahora
                         </a>
+                        <p class="email-display">
+                            <span class="email-label">Email:</span>
+                            <a href="mailto:contacto@tribusurtierra.com">contacto@tribusurtierra.com</a>
+                        </p>
                         
-                        <div class="email-display">
-                            <a href="mailto:tribusurtierrabjjgrapplingmma@gmail.com" class="email-link">
-                                <span class="email-label">Email:</span> tribusurtierrabjjgrapplingmma@gmail.com
+                        <div class="quick-contact-grid">
+                            <a href="#" target="_blank" class="quick-contact-btn">
+                                <i class="fab fa-facebook quick-icon"></i>
+                                <p>Facebook</p>
+                            </a>
+                            <a href="#" target="_blank" class="quick-contact-btn">
+                                <i class="fab fa-instagram quick-icon"></i>
+                                <p>Instagram</p>
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="contact-box schedules-box">
+                <div class="contact-box">
                     <div class="box-header">
-                        <h3>Horarios de Entrenamiento</h3>
+                        <h3>Clase de Prueba</h3>
                     </div>
-                    <div class="box-content schedules-content">
-                        
-                        <p><strong>Lunes a Jueves: 5:00 PM - 6:00 PM</strong></p>
-                        <p><strong>Lunes a Jueves: 6:30 PM - 7:30 PM</strong></p>
+                    <div class="schedules-content">
+                        <p style="color: var(--color-light); font-weight: bold;">¡Tu primera clase es gratis!</p>
+                        <p>Ven y experimenta la disciplina y energía de nuestro entrenamiento sin compromiso.</p>
                         
                         <div class="promo-item">
-                            <span class="promo-dot"></span> Agenda tu Sesión de Diagnóstico Inicial al inscribirte.
+                            <span class="promo-dot"></span>
+                            Prueba gratuita de BJJ por 3 días.
                         </div>
 
                         <div class="schedule-note">
-                            <p><strong>Próximas aperturas de horarios</strong> en base al ingreso de nuevos grupos de estudiantes.</p>
-                        </div>
-                        
-                        <div class="quick-contact-grid">
-                            <a href="tel:+573168211183" class="quick-contact-btn">
-                                <span class="quick-icon">📞</span>
-                                <p>Llamar Rápido</p>
-                            </a>
-                            <a href="https://wa.me/573168211183?text=Hola,%20tengo%20una%20consulta%20rápida%20sobre%20los%20horarios." class="quick-contact-btn">
-                                <span class="quick-icon">💬</span>
-                                <p>WhatsApp Rápido</p>
-                            </a>
+                            <p>Agenda tu clase de prueba con el Maestro por **WhatsApp**.</p>
                         </div>
                     </div>
                 </div>
@@ -312,22 +269,42 @@
     </section>
 
     <footer class="main-footer">
-        <p class="copyright">&copy; 2025 BJJ TRIBU SUR TIERRA. Todos los derechos reservados.</p>
-        
-        <p class="brand-values">Jiu Jitsu Brasileño • Disciplina • Respeto • Excelencia</p>
-        
-        <p class="author-credit">Diseñado y Maquetado por **OSCAR DAVID RUIZ SAEZ**</p>
+        <p class="brand-values">BJJ Tribú Sur Tierra | Mocoa, Putumayo | <span class="highlight">Oss!</span></p>
+        <p class="copyright">&copy; 2024 Todos los derechos reservados.</p>
+        <p class="author-credit">Diseño y desarrollo web.</p>
     </footer>
 
 
     <div id="video-modal" class="modal-overlay">
         <div class="modal-content">
-            <button class="close-btn" id="close-modal">&times;</button>
+            <button id="close-video-btn" class="close-btn">&times;</button>
             <div id="modal-video-container">
+                </div>
+        </div>
+    </div>
+
+    <div id="gallery-modal" class="modal-overlay">
+        <div class="modal-gallery-content">
+            <button id="close-gallery-btn" class="close-btn">&times;</button>
+            
+            <div class="gallery-content-grid">
+                <div class="main-media-viewer">
+                    <div class="media-placeholder">
+                        </div>
+                    <p class="media-caption">Leyenda del Video/Imagen</p>
+                </div>
+
+                <div class="thumbnail-sidebar">
+                    <h4>MÁS CONTENIDO</h4>
+                    <div class="thumbnail-container">
+                        </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script> 
+
+    <script src="script.js"></script>
+
 </body>
 </html>
