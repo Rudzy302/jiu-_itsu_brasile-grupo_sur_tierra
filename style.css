@@ -1,0 +1,1001 @@
+/* ============================================== */
+/* VARIABLES Y RESET BÁSICO */
+/* ============================================== */
+
+:root {
+    /* Define tus colores */
+    --color-primary: #ff9933; /* Naranja/Dorado de acento */
+    --color-dark: #1a1a1a; 	/* Negro oscuro para contenido */
+    --color-light: #ffffff; 	/* Blanco puro */
+    --color-subtitle: #ccc; 	/* Gris claro para subtítulos y enlaces */
+    --nav-height: 90px; 	/* Altura de la barra de navegación para el logo grande */
+    /* Fuente principal, similar a la plantilla */
+    --font-main: 'Montserrat', sans-serif; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black; 
+    color: var(--color-light);
+    line-height: 1.5;
+    scroll-behavior: smooth; 
+    font-family: var(--font-main); 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.highlight {
+    color: var(--color-primary); 
+}
+
+.section-title, h1 {
+    font-family: var(--font-main);
+    font-weight: 900;
+}
+
+.section-title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--color-light);
+}
+
+.section-subtitle {
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+    color: var(--color-subtitle);
+    font-size: 1.1em;
+}
+
+
+/* ============================================== */
+/* ANIMACIÓN: SECCIÓN OCULTA POR DEFECTO */
+/* ============================================== */
+.section-hidden {
+    /* Desaparece visualmente (fade out) */
+    opacity: 0 !important; 
+    /* Efecto de deslizar */
+    transform: translateY(50px) !important; 
+}
+
+/* Aplicar la transición a todas las secciones animadas */
+.animated-section {
+    /* TRANSICIÓN RÁPIDA Y SUAVE: 0.6 segundos */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+    
+    /* Estado inicial por defecto */
+    visibility: visible; 
+    overflow: hidden; 
+}
+
+
+/* ============================================== */
+/* 1. BARRA DE NAVEGACIÓN (HEADER) */
+/* ============================================== */
+
+.navbar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height); 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 5%; 
+    z-index: 10; 
+    background-color: black; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+.logo-text {
+    color: var(--color-light); 
+    font-size: 1.3em; 
+    font-weight: 700;
+    text-decoration: none;
+    font-family: var(--font-main);
+}
+
+.logo-highlight {
+    color: var(--color-primary); 
+    font-weight: 900; 
+}
+
+.nav-links a {
+    color: var(--color-subtitle);
+    margin-left: 25px;
+    font-size: 1.3em; 
+    transition: color 0.3s;
+    font-weight: 500; 
+}
+
+.nav-links a:hover {
+    color: var(--color-primary); 
+}
+
+.logo-social-group-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-nav-icons {
+    display: flex;
+    gap: 15px; 
+    align-items: center;
+}
+
+.social-icon {
+    font-size: 1.5em;
+    color: var(--color-subtitle); 
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: var(--color-primary); 
+}
+
+.social-icon .icon-text {
+    font-family: var(--font-main); 
+    font-weight: 700; 
+    font-size: 1.3em; 
+}
+
+.logo-imagen {
+    height: 70px; 
+    width: auto;
+    display: block;
+}
+
+
+/* ============================================== */
+/* 2. SECCIÓN PRINCIPAL (HERO SECTION) */
+/* ============================================== */
+
+.hero-section {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+        url('https://images.unsplash.com/photo-1728498942768-b0b86d368ce5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); 
+    
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    padding-left: 5%; 
+    padding-top: var(--nav-height); 
+    transition: background-image 0.3s ease-out; 
+}
+
+
+.hero-section:not(.section-hidden) {
+    height: 100vh !important; 
+    padding-top: var(--nav-height) !important;
+}
+
+
+.hero-content {
+    max-width: 550px; 
+}
+
+h1 {
+    font-size: 5em; 
+    font-weight: 900;
+    line-height: 1.1; 
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: var(--color-subtitle);
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dot {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+/* KEYFRAMES para el punto de scroll */
+@keyframes scroll-bounce {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.5;
+    }
+}
+
+
+/* ============================================== */
+/* BOTONES DE ACCIÓN (CTAs) */
+/* ============================================== */
+
+.cta-buttons {
+    display: flex; 
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px; 
+    transition: all 0.3s; 
+    text-align: center;
+    font-family: var(--font-main);
+}
+
+.primary {
+    background-color: var(--color-primary);
+    color: black;
+    border: 2px solid var(--color-primary);
+}
+
+.secondary {
+    background-color: transparent;
+    color: var(--color-light);
+    border: 2px solid var(--color-light);
+}
+
+.primary:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.secondary:hover {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+}
+
+/* ============================================== */
+/* 3. SECCIÓN DE PRESENTACIÓN (FILOSOFIA) */
+/* ============================================== */
+
+.about-section {
+    padding: 150px 5% 80px 5%; 
+    background-color: black; 
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Mantenemos el padding cuando está visible */
+.about-section:not(.section-hidden) {
+      padding: 150px 5% 80px 5% !important; 
+}
+
+.about-grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    text-align: left;
+    margin-bottom: 80px;
+}
+
+.video-container {
+    width: 500px;
+}
+
+/* INICIO: CORRECCIÓN DEL PLACEHOLDER DE VIDEO */
+.placeholder-video {
+    width: 100%;
+    height: 300px;
+    background-color: var(--color-dark); 
+    /* Nuevos estilos para la imagen de fondo */
+    background-size: cover; 
+    background-position: center; 
+    position: relative; /* Necesario para posicionar el ícono de play */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Estilo del ícono de play */
+.play-icon {
+    font-size: 3em;
+    color: var(--color-primary);
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+    padding: 10px 15px;
+    line-height: 1;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para contraste */
+    z-index: 2; /* Asegura que el ícono esté sobre la imagen */
+    transition: background-color 0.3s;
+}
+
+.placeholder-video:hover .play-icon {
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+}
+
+/* Efecto Overlay Oscuro sobre la imagen */
+.placeholder-video::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.3s;
+    z-index: 1; 
+}
+
+.placeholder-video:hover::before {
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+/* FIN: CORRECCIÓN DEL PLACEHOLDER DE VIDEO */
+
+
+.video-caption {
+    font-weight: bold;
+    color: var(--color-light);
+}
+
+.video-subcaption {
+    color: var(--color-subtitle);
+    font-size: 0.9em;
+}
+
+.feature-list {
+    max-width: 500px;
+    padding-top: 20px;
+}
+
+.feature-list h3 {
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.feature-icon {
+    min-width: 15px;
+    min-height: 15px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    margin-top: 5px; 
+}
+
+.feature-item h4 {
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.feature-item p {
+    color: var(--color-subtitle);
+}
+
+/* Galería */
+.gallery-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+
+.gallery-item {
+    background-color: var(--color-dark); 
+    min-height: 300px;
+    border-radius: 5px;
+    /* Estilo de la galería (ejemplo con imagen de fondo) */
+    background: #333 url('https://i.ibb.co/nRL7rY4/gallery-placeholder.jpg') no-repeat center center/cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+
+/* ============================================== */
+/* ESTILOS PARA EL MODAL DE VIDEO */
+/* ============================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fondo oscuro transparente (efecto lightbox) */
+    background-color: rgba(0, 0, 0, 0.95); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Z-index más alto */
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Estado ACTIVO/VISIBLE del modal */
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    /* El video será grande y centrado */
+    position: relative;
+    width: 90%; 
+    max-width: 800px; 
+    /* Relación de aspecto estándar (16:9) */
+    aspect-ratio: 16 / 9; 
+    border-radius: 8px;
+    overflow: hidden;
+    /* Efecto de "hacerse un poco más grande" */
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+/* El contenido se agranda al activarse el modal */
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+/* Estilo para el iframe de Facebook para que ocupe todo el modal */
+.modal-content iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Botón de Cierre del Modal */
+.close-btn {
+    position: absolute;
+    top: -35px; /* Lo mueve fuera del borde superior */
+    right: -35px;
+    background: var(--color-primary);
+    color: var(--color-dark);
+    border: none;
+    font-size: 30px;
+    font-weight: 900;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2001; 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.close-btn:hover {
+    background-color: var(--color-light);
+    transform: rotate(90deg);
+}
+
+/* ============================================== */
+/* 4. SECCIÓN DE UBICACIÓN (LOCATION) - DISEÑO MODULAR */
+/* ============================================== */
+
+.location-section {
+    padding: 100px 5%;
+    background-color: black;
+    text-align: center;
+}
+
+/* Mantenemos el padding cuando está visible */
+.location-section:not(.section-hidden) {
+    padding: 100px 5% !important;
+}
+
+.location-section .section-subtitle {
+    margin-bottom: 40px; 
+}
+
+.location-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto; 
+    gap: 25px; 
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    text-align: left;
+}
+
+.location-box {
+    background-color: var(--color-dark); 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.box-header {
+    background-color: #2a2a2a; 
+    padding: 15px 25px;
+    border-bottom: 1px solid #333;
+}
+
+.box-header h3 {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--color-primary); 
+    margin: 0;
+}
+
+.box-content {
+    padding: 25px;
+}
+
+.video-content, .map-content {
+    text-align: center;
+}
+
+.video-placeholder-small, .map-placeholder-small {
+    width: 100%;
+    height: 180px; 
+    background-color: #333; 
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-subtitle);
+    font-style: italic;
+}
+
+.guide-text {
+    font-weight: bold;
+    color: var(--color-light);
+}
+
+.guide-subtext {
+    color: var(--color-subtitle);
+    font-size: 0.9em;
+}
+
+.info-content {
+    display: grid;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    color: var(--color-subtitle);
+}
+
+.info-item strong {
+    color: var(--color-primary); 
+    font-weight: 700;
+}
+
+.info-icon {
+    font-size: 1.4em;
+    line-height: 1;
+    color: var(--color-primary); 
+}
+
+.list-content ul {
+    list-style: none; 
+    padding-left: 0;
+}
+
+.list-content li {
+    padding-left: 1.5em; 
+    position: relative;
+    margin-bottom: 10px;
+    color: var(--color-subtitle);
+}
+
+.list-content li:before {
+    content: '•'; 
+    position: absolute;
+    left: 0;
+    color: var(--color-primary); 
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+
+/* ============================================== */
+/* 5. SECCIÓN DE CONTACTO/MAESTRO (CONTACT) */
+/* ============================================== */
+
+.contact-section {
+    padding: 100px 5%;
+    background-color: black;
+    text-align: center;
+}
+
+/* Aseguramos el padding para cuando está visible */
+.contact-section:not(.section-hidden) {
+    padding: 100px 5% !important;
+}
+
+.master-grid-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    text-align: left;
+}
+
+.master-bio-column {
+    flex: 2; 
+    display: grid;
+    gap: 25px;
+}
+
+.contact-sidebar {
+    flex: 1; 
+    display: grid;
+    gap: 25px;
+}
+
+.bio-box, .contact-box {
+    background-color: var(--color-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.bio-content, .contact-items, .schedules-content {
+    padding: 25px;
+}
+
+.master-info .bio-header {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    background-color: #2a2a2a;
+    border-bottom: 1px solid #333;
+    position: relative;
+}
+
+.master-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 3px solid var(--color-primary);
+}
+
+.bio-titles h3 {
+    font-size: 1.5em;
+    color: var(--color-light);
+    margin-bottom: 0;
+}
+
+.master-rank {
+    color: var(--color-primary);
+    font-size: 0.9em;
+}
+
+.rank-icon {
+    font-size: 2em;
+    color: var(--color-primary);
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stats-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    color: var(--color-subtitle);
+}
+
+.stat-icon {
+    color: var(--color-primary);
+    margin-right: 5px;
+}
+
+.cert-content {
+    display: flex;
+    gap: 25px;
+}
+
+.certificate-display {
+    flex: 1;
+    max-width: 50%;
+}
+
+.cert-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #444;
+}
+
+.cert-list {
+    flex: 1;
+    list-style: none;
+    padding-left: 0;
+    color: var(--color-subtitle);
+    font-size: 0.95em;
+}
+
+.contact-items .contact-prompt {
+    color: var(--color-subtitle);
+    margin-bottom: 20px;
+}
+
+.contact-btn {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-bg { /* Botón Llamar */
+    background-color: var(--color-primary);
+    color: black;
+}
+
+.secondary-bg { /* Botón WhatsApp */
+    background-color: #333;
+    color: var(--color-light);
+    border: 1px solid var(--color-primary);
+}
+
+.email-display {
+    padding: 15px;
+    background-color: #111; 
+    border-radius: 5px;
+    border: 1px solid #111;
+    margin-top: 10px; 
+    display: block;
+    font-size: 0.9em;
+    word-wrap: break-word; 
+    color: var(--color-subtitle);
+}
+
+.email-display .email-label {
+    color: var(--color-light);
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.email-display a {
+    color: var(--color-subtitle);
+    transition: color 0.3s;
+}
+
+.schedules-content p {
+    color: var(--color-subtitle);
+    margin-bottom: 5px;
+}
+
+.promo-item {
+    background-color: #333;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    color: var(--color-light);
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+}
+
+.promo-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.schedule-note {
+    background-color: #111; 
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border-left: 5px solid var(--color-primary); 
+    text-align: center;
+}
+
+.schedule-note p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--color-subtitle);
+}
+
+.schedule-note strong {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.quick-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.quick-contact-btn {
+    background-color: #111;
+    padding: 15px 10px;
+    border-radius: 5px;
+    border: 1px solid #333;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.quick-contact-btn:hover {
+    background-color: #333;
+}
+
+.quick-icon {
+    font-size: 1.5em;
+    color: var(--color-primary);
+}
+
+.quick-contact-btn p {
+    margin: 5px 0 0 0;
+    color: var(--color-subtitle);
+    font-size: 1em; 
+}
+
+
+/* ============================================== */
+/* PIE DE PÁGINA (Footer) */
+/* ============================================== */
+
+.main-footer {
+    padding: 30px 5%;
+    background-color: var(--color-dark);
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: var(--color-subtitle);
+    margin-bottom: 10px;
+}
+
+.brand-values {
+    font-size: 1em;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.author-credit {
+    font-size: 0.8em;
+    color: #555;
+}
+
+/* ============================================== */
+/* 6. MEDIA QUERIES (RESPONSIVE) - Asegurar que el modal se vea bien en móvil */
+/* ============================================== */
+
+@media (max-width: 1024px) {
+    .master-grid-container {
+        flex-direction: column;
+    }
+    .master-bio-column, .contact-sidebar {
+        flex: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .nav-links {
+        order: 3; 
+        flex-basis: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .nav-links a {
+        font-size: 1em;
+        margin: 0 10px;
+    }
+    .logo-social-group-right {
+        gap: 10px;
+    }
+    .social-icon .icon-text {
+        font-size: 1em;
+    }
+
+    /* Hero */
+    h1 {
+        font-size: 3.5em;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Filosofía */
+    .about-grid-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .video-container, .feature-list {
+        width: 100%;
+        max-width: 100%;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ubicación */
+    .location-grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Contacto */
+    .cert-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .certificate-display {
+        max-width: 100%;
+    }
+    .quick-contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Modal */
+    .close-btn {
+        top: 5px;
+        right: 5px;
+        background: var(--color-primary);
+        color: var(--color-dark);
+    }
+}
